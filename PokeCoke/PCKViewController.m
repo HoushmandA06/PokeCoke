@@ -45,7 +45,7 @@
     [cokeProductList addTarget:self action:@selector(pushCokeProductList) forControlEvents:UIControlEventTouchUpInside];
     [cokeProductList setTitle:@"Coke Wishlist" forState:UIControlStateNormal];
     cokeProductList.titleLabel.font = [UIFont fontWithName:@"AppleSDGothicNeo-Medium" size:10];
-    cokeProductList.titleLabel.textColor = HEADER_COLOR;
+    [cokeProductList setTitleColor:HEADER_COLOR forState:UIControlStateNormal];
     [self.view addSubview:cokeProductList];
     
     noCoke = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2-50,cokeProductList.frame.origin.y+125,100,100)];
@@ -53,8 +53,8 @@
     noCoke.backgroundColor = BACKGROUND_COLOR;
     [noCoke addTarget:self action:@selector(pushSubmitForm:) forControlEvents:UIControlEventTouchUpInside];
     [noCoke setTitle:@"No Coke!" forState:UIControlStateNormal];
+    [noCoke setTitleColor:HEADER_COLOR forState:UIControlStateNormal];
     noCoke.titleLabel.font = [UIFont fontWithName:@"AppleSDGothicNeo-Medium" size:10];
-    noCoke.titleLabel.textColor = HEADER_COLOR;
     [self.view addSubview:noCoke];
         
     callCoke = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2-50,noCoke.frame.origin.y+125,100,100)];
@@ -63,7 +63,7 @@
     [callCoke addTarget:self action:@selector(phone) forControlEvents:UIControlEventTouchUpInside];
     [callCoke setTitle:@"Call Coke" forState:UIControlStateNormal];
     callCoke.titleLabel.font = [UIFont fontWithName:@"AppleSDGothicNeo-Medium" size:10];
-    callCoke.titleLabel.textColor = HEADER_COLOR;
+    [callCoke setTitleColor:HEADER_COLOR forState:UIControlStateNormal];
     [self.view addSubview:callCoke];
     
 }
@@ -82,27 +82,21 @@
 -(void)pushSubmitForm:(UIButton*)sender
 {
     
-    // my mapviewVC needs to be Submit form
     
     PCKMapViewController * submitVC = [[PCKMapViewController alloc] initWithNibName:nil bundle:nil];
     
     [self presentViewController:submitVC animated:NO completion:nil];
     
-    
-    
 }
-
 
 
 -(void)phone
 {
     
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://7706303262"]];
+ 
+   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt://7706303262"]];
 
-   // [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt://1028464023"]];
 
-    
-    
 }
 
 
