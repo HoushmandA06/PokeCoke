@@ -11,14 +11,12 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-
 @interface PCKMapViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
 
 @end
 
 @implementation PCKMapViewController
 {
-    
     CLLocationManager * lManager; // has an array of locations
     MKMapView * myMapView;
     
@@ -71,8 +69,6 @@
     self.addressField.font = [UIFont fontWithName:@"AppleSDGothicNeo-Medium" size:20];
     [self.view addSubview:self.addressField];
     
-
-    
     UIButton * pushTVC = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2-75, self.view.frame.size.height/2+75, 150, 150)];
     [pushTVC setImage:[UIImage imageNamed:@"Coke"] forState:UIControlStateNormal];
     [pushTVC addTarget:self action:@selector(pushTVC) forControlEvents:UIControlEventTouchUpInside];
@@ -84,10 +80,9 @@
 
 -(void)pushTVC
 {
-    // code to push TVC init with navcontroller
     
     
-    
+    [self dismissViewControllerAnimated:NO completion:nil];
     
     
 }

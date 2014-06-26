@@ -7,6 +7,7 @@
 //
 
 #import "PCKAppDelegate.h"
+#import "PCKViewController.h"
 #import "PCKMapViewController.h"
 
 
@@ -17,7 +18,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    self.window.rootViewController = [[PCKMapViewController alloc] initWithNibName:nil bundle:nil];
+    self.window.rootViewController = [[PCKViewController alloc] initWithNibName:nil bundle:nil];
     
     
     self.window.backgroundColor = BACKGROUND_COLOR;

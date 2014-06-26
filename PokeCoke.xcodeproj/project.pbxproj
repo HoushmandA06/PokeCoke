@@ -22,6 +22,7 @@
 		0FA7FF84195B78C6009FF521 /* PCKMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA7FF81195B78C6009FF521 /* PCKMapViewController.m */; };
 		0FA7FF85195B78C6009FF521 /* PCKMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA7FF83195B78C6009FF521 /* PCKMapAnnotation.m */; };
 		0FA7FF87195B8893009FF521 /* Coke.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA7FF86195B8893009FF521 /* Coke.png */; };
+		0FA7FF8A195C60D5009FF521 /* PCKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA7FF89195C60D5009FF521 /* PCKViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		0FA7FF82195B78C6009FF521 /* PCKMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKMapAnnotation.h; sourceTree = "<group>"; };
 		0FA7FF83195B78C6009FF521 /* PCKMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKMapAnnotation.m; sourceTree = "<group>"; };
 		0FA7FF86195B8893009FF521 /* Coke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Coke.png; sourceTree = "<group>"; };
+		0FA7FF88195C60D5009FF521 /* PCKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKViewController.h; sourceTree = "<group>"; };
+		0FA7FF89195C60D5009FF521 /* PCKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 			children = (
 				0FA7FF60195B7897009FF521 /* PCKAppDelegate.h */,
 				0FA7FF61195B7897009FF521 /* PCKAppDelegate.m */,
+				0FA7FF88195C60D5009FF521 /* PCKViewController.h */,
+				0FA7FF89195C60D5009FF521 /* PCKViewController.m */,
 				0FA7FF80195B78C6009FF521 /* PCKMapViewController.h */,
 				0FA7FF81195B78C6009FF521 /* PCKMapViewController.m */,
 				0FA7FF82195B78C6009FF521 /* PCKMapAnnotation.h */,
@@ -254,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FA7FF8A195C60D5009FF521 /* PCKViewController.m in Sources */,
 				0FA7FF5E195B7897009FF521 /* main.m in Sources */,
 				0FA7FF62195B7897009FF521 /* PCKAppDelegate.m in Sources */,
 				0FA7FF84195B78C6009FF521 /* PCKMapViewController.m in Sources */,
@@ -378,6 +384,7 @@
 				GCC_PREFIX_HEADER = "PokeCoke/PokeCoke-Prefix.pch";
 				INFOPLIST_FILE = "PokeCoke/PokeCoke-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -391,6 +398,7 @@
 				GCC_PREFIX_HEADER = "PokeCoke/PokeCoke-Prefix.pch";
 				INFOPLIST_FILE = "PokeCoke/PokeCoke-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
