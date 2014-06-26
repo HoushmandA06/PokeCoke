@@ -11,7 +11,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface PCKMapViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
+@interface PCKMapViewController () <CLLocationManagerDelegate, MKMapViewDelegate, UITextFieldDelegate, UIAlertViewDelegate>
 
 @end
 
@@ -19,6 +19,9 @@
 {
     CLLocationManager * lManager; // has an array of locations
     MKMapView * myMapView;
+    UITextField * email;
+
+    
     
 }
 
@@ -45,47 +48,95 @@
 {
     [super viewDidLoad];
     
-    myMapView = [[MKMapView alloc] initWithFrame:CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height/2)];
+    myMapView = [[MKMapView alloc] initWithFrame:CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT)];
     
     myMapView.delegate = self;
     
     [self.view addSubview:myMapView];
-    
+    [self.view sendSubviewToBack:myMapView];
+
 
 //// NO NEED FOR TAP RECOGNIZER SINCE NOT ADDING PINS
 //    UITapGestureRecognizer *singleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addPinToMap:)];
 //    singleTapRecognizer.numberOfTapsRequired = 1;
-    
 //  [myMapView addGestureRecognizer:singleTapRecognizer];
     
     
-    // PROPERTY FOR ADDRESS FIELD, WILL NEED TO GET INFO FROM CLLOCATION THEN PASS ON TO CHILD VIEW (TVC PUSHED BY COKE BUTTON)
+    email = [[UITextField alloc] initWithFrame:CGRectMake(0,0,SCREEN_WIDTH,50)];
+    email.placeholder = @"ENTER E-MAIL FOR REWARD";
+    email.backgroundColor = HEADER_COLOR;
+    email.keyboardType = UIKeyboardTypeEmailAddress;
+    email.leftView = [[UIView alloc] initWithFrame:CGRectMake(0,0,10,30)]; // puts the cursor a set amt right of the textfield
+    email.leftViewMode = UITextFieldViewModeAlways;
+    email.alpha = .80;
+    email.textColor = [UIColor blackColor];
+    email.font = [UIFont fontWithName:@"AppleSDGothicNeo-Medium" size:20];
+    email.delegate = self;
+    [self.view addSubview:email];
     
-    self.addressField = [[UILabel alloc] initWithFrame:CGRectMake(0,self.view.frame.size.height/2,self.view.frame.size.width,50)];
-    self.addressField.text = @"Address Placeholder"; // to be replaced by CLLocation address
+    self.productName = [[UILabel alloc] initWithFrame:CGRectMake(0,email.frame.origin.y+52,SCREEN_WIDTH,50)];
+    self.productName.text = @"Missing Product"; // to be replaced by CLLocation address
+    self.productName.textAlignment = NSTextAlignmentCenter;
+    self.productName.backgroundColor = HEADER_COLOR;
+    self.productName.alpha = .80;
+    self.productName.textColor = [UIColor whiteColor];
+    self.productName.font = [UIFont fontWithName:@"AppleSDGothicNeo-Medium" size:20];
+    [self.view addSubview:self.productName];
+    
+    self.addressField = [[UILabel alloc] initWithFrame:CGRectMake(0,email.frame.origin.y+104,SCREEN_WIDTH,50)];
+    self.addressField.text = @"Store Address"; // to be replaced by CLLocation address
     self.addressField.textAlignment = NSTextAlignmentCenter;
+    self.addressField.alpha = .80;
     self.addressField.backgroundColor = HEADER_COLOR;
     self.addressField.textColor = [UIColor whiteColor];
     self.addressField.font = [UIFont fontWithName:@"AppleSDGothicNeo-Medium" size:20];
     [self.view addSubview:self.addressField];
     
-    UIButton * pushTVC = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2-75, self.view.frame.size.height/2+75, 150, 150)];
-    [pushTVC setImage:[UIImage imageNamed:@"Coke"] forState:UIControlStateNormal];
-    [pushTVC addTarget:self action:@selector(pushTVC) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.view addSubview:pushTVC];
-    
+    UIButton * submit = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-105, SCREEN_HEIGHT-105, 100, 100)];
+    [submit setImage:[UIImage imageNamed:@"Coke"] forState:UIControlStateNormal];
+    [submit addTarget:self action:@selector(submit) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:submit];
     
 }
 
--(void)pushTVC
+
+
+
+- (void)alertView:(UIAlertView *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == 0)
+    {
+        
+        [self dismissViewControllerAnimated:NO completion:nil];
+
+    }
+    else
+    {
+        
+    }
+}
+
+
+-(void)submit
 {
     
+    if([email.text length] == 0)
+        
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Email is optional, but we can't send you a reward without it. Are you sure you want to submit?"  message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
+        [alertView show];
+        
+    } else
     
-    [self dismissViewControllerAnimated:NO completion:nil];
+    {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Thanks for the info!  Expect a reward email in your inbox!" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
     
+    [alertView show];
+    }
     
 }
+
 
 
 
@@ -103,8 +154,7 @@
     NSLog(@"%@", location);
         [myMapView addAnnotation:annotation];
         
-    //   [mapView setCenterCoordinate:location.coordinate animated:YES];
-    //coordinate has lat and long
+    // [mapView setCenterCoordinate:location.coordinate animated:YES];
 
         MKCoordinateRegion region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(1.0,1.0));  //sets center AND zooms (MKCoordinateRegion)
         
@@ -265,6 +315,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+-(BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
 
 
 @end

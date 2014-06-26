@@ -43,7 +43,7 @@
     cokeProductList.layer.cornerRadius = 50;
     cokeProductList.backgroundColor = BACKGROUND_COLOR;
     [cokeProductList addTarget:self action:@selector(pushCokeProductList) forControlEvents:UIControlEventTouchUpInside];
-    [cokeProductList setTitle:@"Coke Wishlist" forState:UIControlStateNormal];
+    [cokeProductList setTitle:@"I wish you sold it here!" forState:UIControlStateNormal];
     cokeProductList.titleLabel.font = [UIFont fontWithName:@"AppleSDGothicNeo-Medium" size:10];
     [cokeProductList setTitleColor:HEADER_COLOR forState:UIControlStateNormal];
     [self.view addSubview:cokeProductList];
@@ -52,7 +52,7 @@
     noCoke.layer.cornerRadius = 50;
     noCoke.backgroundColor = BACKGROUND_COLOR;
     [noCoke addTarget:self action:@selector(pushSubmitForm:) forControlEvents:UIControlEventTouchUpInside];
-    [noCoke setTitle:@"No Coke!" forState:UIControlStateNormal];
+    [noCoke setTitle:@"Gasp! NO COKE SOLD HERE!" forState:UIControlStateNormal];
     [noCoke setTitleColor:HEADER_COLOR forState:UIControlStateNormal];
     noCoke.titleLabel.font = [UIFont fontWithName:@"AppleSDGothicNeo-Medium" size:10];
     [self.view addSubview:noCoke];
@@ -84,8 +84,8 @@
     
     
     PCKMapViewController * submitVC = [[PCKMapViewController alloc] initWithNibName:nil bundle:nil];
-    
     [self presentViewController:submitVC animated:NO completion:nil];
+    submitVC.productName.text = @"No Coca-Cola products at all!";
     
 }
 

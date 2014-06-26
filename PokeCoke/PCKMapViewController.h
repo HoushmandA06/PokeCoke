@@ -11,6 +11,7 @@
 @interface PCKMapViewController : UIViewController
 
 @property (nonatomic) UILabel * addressField;
+@property (nonatomic) UILabel * productName;
 
 
 @end
