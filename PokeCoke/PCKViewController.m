@@ -28,8 +28,6 @@
     if (self) {
 
         self.view.backgroundColor = HEADER_COLOR;
-        
-    
     
     }
     return self;
@@ -43,8 +41,10 @@
     cokeProductList.layer.cornerRadius = 50;
     cokeProductList.backgroundColor = BACKGROUND_COLOR;
     [cokeProductList addTarget:self action:@selector(pushCokeProductList) forControlEvents:UIControlEventTouchUpInside];
-    [cokeProductList setTitle:@"I wish you sold it here!" forState:UIControlStateNormal];
-    cokeProductList.titleLabel.font = [UIFont fontWithName:@"AppleSDGothicNeo-Medium" size:10];
+    cokeProductList.titleLabel.textAlignment = NSTextAlignmentCenter;
+    cokeProductList.titleLabel.lineBreakMode = NSLineBreakByCharWrapping;
+    [cokeProductList setTitle:@"I wish you\nsold it here!" forState:UIControlStateNormal];
+    cokeProductList.titleLabel.font = [UIFont fontWithName:@"AppleSDGothicNeo-Medium" size:15];
     [cokeProductList setTitleColor:HEADER_COLOR forState:UIControlStateNormal];
     [self.view addSubview:cokeProductList];
     
@@ -52,17 +52,21 @@
     noCoke.layer.cornerRadius = 50;
     noCoke.backgroundColor = BACKGROUND_COLOR;
     [noCoke addTarget:self action:@selector(pushSubmitForm:) forControlEvents:UIControlEventTouchUpInside];
-    [noCoke setTitle:@"Gasp! NO COKE SOLD HERE!" forState:UIControlStateNormal];
+    noCoke.titleLabel.textAlignment = NSTextAlignmentCenter;
+    noCoke.titleLabel.lineBreakMode = NSLineBreakByCharWrapping;
+    [noCoke setTitle:@"Gasp!\nNo Coke Products!" forState:UIControlStateNormal];
     [noCoke setTitleColor:HEADER_COLOR forState:UIControlStateNormal];
-    noCoke.titleLabel.font = [UIFont fontWithName:@"AppleSDGothicNeo-Medium" size:10];
+    noCoke.titleLabel.font = [UIFont fontWithName:@"AppleSDGothicNeo-Medium" size:15];
     [self.view addSubview:noCoke];
         
     callCoke = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2-50,noCoke.frame.origin.y+125,100,100)];
     callCoke.layer.cornerRadius = 50;
     callCoke.backgroundColor = BACKGROUND_COLOR;
     [callCoke addTarget:self action:@selector(phone) forControlEvents:UIControlEventTouchUpInside];
-    [callCoke setTitle:@"Call Coke" forState:UIControlStateNormal];
-    callCoke.titleLabel.font = [UIFont fontWithName:@"AppleSDGothicNeo-Medium" size:10];
+    callCoke.titleLabel.textAlignment = NSTextAlignmentCenter;
+    callCoke.titleLabel.lineBreakMode = NSLineBreakByCharWrapping;
+    [callCoke setTitle:@"Call Coke,\nSpeak to a Human" forState:UIControlStateNormal];
+    callCoke.titleLabel.font = [UIFont fontWithName:@"AppleSDGothicNeo-Medium" size:15];
     [callCoke setTitleColor:HEADER_COLOR forState:UIControlStateNormal];
     [self.view addSubview:callCoke];
     
