@@ -8,8 +8,10 @@
 
 #import "PCKMapViewController.h"
 #import "PCKMapAnnotation.h"
+#import <Parse/Parse.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+
 
 @interface PCKMapViewController () <CLLocationManagerDelegate, MKMapViewDelegate, UITextFieldDelegate, UIAlertViewDelegate>
 
@@ -20,9 +22,6 @@
     CLLocationManager * lManager; // has an array of locations
     MKMapView * myMapView;
     UITextField * email;
-
-    
-    
 }
 
 
@@ -108,7 +107,24 @@
     if (buttonIndex == 0)
     {
         
+        // PARSE SUBMISSION CODE HERE
+        PFObject *product = [PFObject objectWithClassName:@"UserReport"];
+        product[@"ProductName"]= self.productName.text;
+        product[@"Email"]= email.text;
+        product[@"address"] = self.addressField.text;
+        // format CLLocation address to include city state (potentially)
+        // add a lat/long object key
+        
+        [product saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            NSLog(@"%u",succeeded);
+
         [self dismissViewControllerAnimated:NO completion:nil];
+            
+
+        }];
+        
+        
+        
 
     }
     else

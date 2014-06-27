@@ -8,6 +8,8 @@
 
 #import "PCKViewController.h"
 #import "PCKMapViewController.h"
+#import "PCKTableViewController.h"
+#import "PCKNavVC.h"
 
 @interface PCKViewController ()
 
@@ -37,12 +39,23 @@
 {
     [super viewDidLoad];
     
-    cokeProductList = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2-50,75,100,100)];
+    
+    UILabel * appLogo = [[UILabel alloc] initWithFrame:CGRectMake(0,25,SCREEN_WIDTH,60)];
+    appLogo.text = @"Poke Coke";
+    appLogo.textAlignment = NSTextAlignmentCenter;
+    appLogo.textColor = BACKGROUND_COLOR;
+    appLogo.font = [UIFont fontWithName:@"LOKICOLA" size:50];
+    [self.view addSubview:appLogo];
+    
+    cokeProductList = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2-50,100,100,100)];
     cokeProductList.layer.cornerRadius = 50;
     cokeProductList.backgroundColor = BACKGROUND_COLOR;
     [cokeProductList addTarget:self action:@selector(pushCokeProductList) forControlEvents:UIControlEventTouchUpInside];
     cokeProductList.titleLabel.textAlignment = NSTextAlignmentCenter;
     cokeProductList.titleLabel.lineBreakMode = NSLineBreakByCharWrapping;
+    
+   // [cokeProductList setImage:[UIImage imageNamed:@"cap"] forState:UIControlStateNormal];
+    
     [cokeProductList setTitle:@"I wish you\nsold it here!" forState:UIControlStateNormal];
     cokeProductList.titleLabel.font = [UIFont fontWithName:@"AppleSDGothicNeo-Medium" size:15];
     [cokeProductList setTitleColor:HEADER_COLOR forState:UIControlStateNormal];
@@ -73,11 +86,26 @@
 }
 
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+    self.navigationController.navigationBarHidden = YES;
+    self.navigationController.toolbarHidden = YES;
+    
+    
+}
+
 
 -(void)pushCokeProductList
 {
     
     // PUSH TO SAVITHA'S FILE
+    
+    PCKTableViewController * TVC = [[PCKTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    PCKNavVC * NVC = [[PCKNavVC alloc] initWithRootViewController:TVC];
+    [self presentViewController:NVC animated:NO completion:nil];
+
+    //    [self presentViewController:TVC animated:NO completion:nil];
     
     
 }
@@ -103,6 +131,10 @@
 
 }
 
+-(BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
 
 
 - (void)didReceiveMemoryWarning

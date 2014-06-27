@@ -9,6 +9,7 @@
 #import "PCKAppDelegate.h"
 #import "PCKViewController.h"
 #import "PCKMapViewController.h"
+#import <Parse/Parse.h>
 
 
 @implementation PCKAppDelegate
@@ -16,9 +17,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+
+    [Parse setApplicationId:@"0QymSGRy3Bn435UbWnlCdw2mm397vj9Clyse5R9L"
+                  clientKey:@"2EL4PcAB8TaIjG2EX0sadt2PmtaBsBrYNOORuObq"];
     
-    self.window.rootViewController = [[PCKViewController alloc] initWithNibName:nil bundle:nil];
+    PCKViewController * startVC = [PCKViewController new];
+    
+    UINavigationController * navVC = [[UINavigationController alloc] initWithRootViewController:startVC];
+    
+    self.window.rootViewController = navVC;
     
     
     self.window.backgroundColor = BACKGROUND_COLOR;

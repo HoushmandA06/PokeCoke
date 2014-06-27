@@ -25,6 +25,21 @@
 		0FA7FF8A195C60D5009FF521 /* PCKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA7FF89195C60D5009FF521 /* PCKViewController.m */; };
 		0FA7FF8C195CBDA4009FF521 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA7FF8B195CBDA4009FF521 /* Default@2x.png */; };
 		0FA7FF8E195CBDAF009FF521 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA7FF8D195CBDAF009FF521 /* Default.png */; };
+		0FA7FF90195CCFCA009FF521 /* cap.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA7FF8F195CCFCA009FF521 /* cap.png */; };
+		0FA7FF92195CD124009FF521 /* LOKICOLA.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 0FA7FF91195CD0BF009FF521 /* LOKICOLA.TTF */; };
+		0FA7FFAF195CD71E009FF521 /* PCKTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA7FFAC195CD71E009FF521 /* PCKTableViewCell.m */; };
+		0FA7FFB0195CD71E009FF521 /* PCKTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA7FFAE195CD71E009FF521 /* PCKTableViewController.m */; };
+		0FA7FFB2195CD818009FF521 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA7FFB1195CD818009FF521 /* Parse.framework */; };
+		0FA7FFB4195CD842009FF521 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA7FFB3195CD842009FF521 /* AudioToolbox.framework */; };
+		0FA7FFB6195CD848009FF521 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA7FFB5195CD848009FF521 /* CFNetwork.framework */; };
+		0FA7FFB8195CD84F009FF521 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA7FFB7195CD84F009FF521 /* CoreLocation.framework */; };
+		0FA7FFBA195CD85C009FF521 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA7FFB9195CD85C009FF521 /* libz.1.1.3.dylib */; };
+		0FA7FFBC195CD863009FF521 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA7FFBB195CD863009FF521 /* MobileCoreServices.framework */; };
+		0FA7FFBE195CD86B009FF521 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA7FFBD195CD86B009FF521 /* QuartzCore.framework */; };
+		0FA7FFC0195CD870009FF521 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA7FFBF195CD870009FF521 /* Security.framework */; };
+		0FA7FFC2195CD87B009FF521 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA7FFC1195CD87B009FF521 /* StoreKit.framework */; };
+		0FA7FFC4195CD888009FF521 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA7FFC3195CD888009FF521 /* SystemConfiguration.framework */; };
+		0FA7FFC7195CE823009FF521 /* PCKNavVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA7FFC6195CE823009FF521 /* PCKNavVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +78,24 @@
 		0FA7FF89195C60D5009FF521 /* PCKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKViewController.m; sourceTree = "<group>"; };
 		0FA7FF8B195CBDA4009FF521 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		0FA7FF8D195CBDAF009FF521 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		0FA7FF8F195CCFCA009FF521 /* cap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cap.png; sourceTree = "<group>"; };
+		0FA7FF91195CD0BF009FF521 /* LOKICOLA.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = LOKICOLA.TTF; sourceTree = "<group>"; };
+		0FA7FFAB195CD71E009FF521 /* PCKTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKTableViewCell.h; sourceTree = "<group>"; };
+		0FA7FFAC195CD71E009FF521 /* PCKTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKTableViewCell.m; sourceTree = "<group>"; };
+		0FA7FFAD195CD71E009FF521 /* PCKTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKTableViewController.h; sourceTree = "<group>"; };
+		0FA7FFAE195CD71E009FF521 /* PCKTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKTableViewController.m; sourceTree = "<group>"; };
+		0FA7FFB1195CD818009FF521 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		0FA7FFB3195CD842009FF521 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		0FA7FFB5195CD848009FF521 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		0FA7FFB7195CD84F009FF521 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0FA7FFB9195CD85C009FF521 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		0FA7FFBB195CD863009FF521 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		0FA7FFBD195CD86B009FF521 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0FA7FFBF195CD870009FF521 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		0FA7FFC1195CD87B009FF521 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		0FA7FFC3195CD888009FF521 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0FA7FFC5195CE823009FF521 /* PCKNavVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKNavVC.h; sourceTree = "<group>"; };
+		0FA7FFC6195CE823009FF521 /* PCKNavVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKNavVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +103,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FA7FFC4195CD888009FF521 /* SystemConfiguration.framework in Frameworks */,
+				0FA7FFC2195CD87B009FF521 /* StoreKit.framework in Frameworks */,
+				0FA7FFC0195CD870009FF521 /* Security.framework in Frameworks */,
+				0FA7FFBE195CD86B009FF521 /* QuartzCore.framework in Frameworks */,
+				0FA7FFBC195CD863009FF521 /* MobileCoreServices.framework in Frameworks */,
+				0FA7FFBA195CD85C009FF521 /* libz.1.1.3.dylib in Frameworks */,
+				0FA7FFB8195CD84F009FF521 /* CoreLocation.framework in Frameworks */,
+				0FA7FFB6195CD848009FF521 /* CFNetwork.framework in Frameworks */,
+				0FA7FFB4195CD842009FF521 /* AudioToolbox.framework in Frameworks */,
 				0FA7FF54195B7897009FF521 /* CoreGraphics.framework in Frameworks */,
 				0FA7FF56195B7897009FF521 /* UIKit.framework in Frameworks */,
+				0FA7FFB2195CD818009FF521 /* Parse.framework in Frameworks */,
 				0FA7FF52195B7897009FF521 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,6 +154,16 @@
 		0FA7FF50195B7897009FF521 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0FA7FFC3195CD888009FF521 /* SystemConfiguration.framework */,
+				0FA7FFC1195CD87B009FF521 /* StoreKit.framework */,
+				0FA7FFBF195CD870009FF521 /* Security.framework */,
+				0FA7FFBD195CD86B009FF521 /* QuartzCore.framework */,
+				0FA7FFBB195CD863009FF521 /* MobileCoreServices.framework */,
+				0FA7FFB9195CD85C009FF521 /* libz.1.1.3.dylib */,
+				0FA7FFB7195CD84F009FF521 /* CoreLocation.framework */,
+				0FA7FFB5195CD848009FF521 /* CFNetwork.framework */,
+				0FA7FFB3195CD842009FF521 /* AudioToolbox.framework */,
+				0FA7FFB1195CD818009FF521 /* Parse.framework */,
 				0FA7FF51195B7897009FF521 /* Foundation.framework */,
 				0FA7FF53195B7897009FF521 /* CoreGraphics.framework */,
 				0FA7FF55195B7897009FF521 /* UIKit.framework */,
@@ -126,10 +179,16 @@
 				0FA7FF61195B7897009FF521 /* PCKAppDelegate.m */,
 				0FA7FF88195C60D5009FF521 /* PCKViewController.h */,
 				0FA7FF89195C60D5009FF521 /* PCKViewController.m */,
+				0FA7FFAB195CD71E009FF521 /* PCKTableViewCell.h */,
+				0FA7FFAC195CD71E009FF521 /* PCKTableViewCell.m */,
+				0FA7FFAD195CD71E009FF521 /* PCKTableViewController.h */,
+				0FA7FFAE195CD71E009FF521 /* PCKTableViewController.m */,
 				0FA7FF80195B78C6009FF521 /* PCKMapViewController.h */,
 				0FA7FF81195B78C6009FF521 /* PCKMapViewController.m */,
 				0FA7FF82195B78C6009FF521 /* PCKMapAnnotation.h */,
 				0FA7FF83195B78C6009FF521 /* PCKMapAnnotation.m */,
+				0FA7FFC5195CE823009FF521 /* PCKNavVC.h */,
+				0FA7FFC6195CE823009FF521 /* PCKNavVC.m */,
 				0FA7FF63195B7897009FF521 /* Images.xcassets */,
 				0FA7FF58195B7897009FF521 /* Supporting Files */,
 			);
@@ -146,6 +205,8 @@
 				0FA7FF5F195B7897009FF521 /* PokeCoke-Prefix.pch */,
 				0FA7FF8D195CBDAF009FF521 /* Default.png */,
 				0FA7FF8B195CBDA4009FF521 /* Default@2x.png */,
+				0FA7FF8F195CCFCA009FF521 /* cap.png */,
+				0FA7FF91195CD0BF009FF521 /* LOKICOLA.TTF */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -244,11 +305,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FA7FF90195CCFCA009FF521 /* cap.png in Resources */,
 				0FA7FF8C195CBDA4009FF521 /* Default@2x.png in Resources */,
 				0FA7FF87195B8893009FF521 /* Coke.png in Resources */,
 				0FA7FF5C195B7897009FF521 /* InfoPlist.strings in Resources */,
 				0FA7FF64195B7897009FF521 /* Images.xcassets in Resources */,
 				0FA7FF8E195CBDAF009FF521 /* Default.png in Resources */,
+				0FA7FF92195CD124009FF521 /* LOKICOLA.TTF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,9 +331,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FA7FF8A195C60D5009FF521 /* PCKViewController.m in Sources */,
+				0FA7FFC7195CE823009FF521 /* PCKNavVC.m in Sources */,
 				0FA7FF5E195B7897009FF521 /* main.m in Sources */,
 				0FA7FF62195B7897009FF521 /* PCKAppDelegate.m in Sources */,
+				0FA7FFB0195CD71E009FF521 /* PCKTableViewController.m in Sources */,
 				0FA7FF84195B78C6009FF521 /* PCKMapViewController.m in Sources */,
+				0FA7FFAF195CD71E009FF521 /* PCKTableViewCell.m in Sources */,
 				0FA7FF85195B78C6009FF521 /* PCKMapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +454,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PokeCoke/PokeCoke-Prefix.pch";
 				INFOPLIST_FILE = "PokeCoke/PokeCoke-Info.plist";
@@ -402,6 +472,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PokeCoke/PokeCoke-Prefix.pch";
 				INFOPLIST_FILE = "PokeCoke/PokeCoke-Info.plist";
