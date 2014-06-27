@@ -39,6 +39,7 @@
         lManager.distanceFilter = 20;
         lManager.desiredAccuracy = kCLLocationAccuracyBest;  //kCLLocationAccuracyNearestTenMeters;
         
+        
         [lManager startUpdatingLocation];
     
     }
@@ -99,8 +100,16 @@
     [submit addTarget:self action:@selector(submit) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:submit];
     
+    
+    UIButton * home = [[UIButton alloc] initWithFrame:CGRectMake(105, SCREEN_HEIGHT-105, 100, 100)];
+    [home setImage:[UIImage imageNamed:@"homescreen"] forState:UIControlStateNormal];
+    [home addTarget:self action:@selector(home) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:home];
+    
+    
+    
+    
 }
-
 
 
 
@@ -124,13 +133,10 @@
             [product saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 NSLog(@"%u",succeeded);
                 
-               
-                
                 // [self dismissViewControllerAnimated:NO completion:nil];
                 
             }];
-            
-            
+        
         }
         else
         {
@@ -200,6 +206,27 @@
         
     
     }
+}
+
+
+-(void)home
+{
+    
+    [self dismissViewControllerAnimated:NO completion:^{
+        UIViewController * popTo = nil;
+        NSArray * viewControllers = [self.navigationController viewControllers];
+        if (viewControllers && [viewControllers count] > 1) {
+            popTo = [viewControllers objectAtIndex:1];
+        }
+        
+        if (popTo) {
+            [self.navigationController popToViewController:popTo animated:YES];
+        } else {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }
+    }];
+    
+    
 }
 
 

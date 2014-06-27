@@ -40,6 +40,7 @@
 		0FA7FFC2195CD87B009FF521 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA7FFC1195CD87B009FF521 /* StoreKit.framework */; };
 		0FA7FFC4195CD888009FF521 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA7FFC3195CD888009FF521 /* SystemConfiguration.framework */; };
 		0FA7FFC7195CE823009FF521 /* PCKNavVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA7FFC6195CE823009FF521 /* PCKNavVC.m */; };
+		0FA7FFC9195DA38F009FF521 /* homescreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA7FFC8195DA38F009FF521 /* homescreen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		0FA7FFC3195CD888009FF521 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0FA7FFC5195CE823009FF521 /* PCKNavVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKNavVC.h; sourceTree = "<group>"; };
 		0FA7FFC6195CE823009FF521 /* PCKNavVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKNavVC.m; sourceTree = "<group>"; };
+		0FA7FFC8195DA38F009FF521 /* homescreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homescreen.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 				0FA7FF8D195CBDAF009FF521 /* Default.png */,
 				0FA7FF8B195CBDA4009FF521 /* Default@2x.png */,
 				0FA7FF8F195CCFCA009FF521 /* cap.png */,
+				0FA7FFC8195DA38F009FF521 /* homescreen.png */,
 				0FA7FF91195CD0BF009FF521 /* LOKICOLA.TTF */,
 			);
 			name = "Supporting Files";
@@ -307,6 +310,7 @@
 			files = (
 				0FA7FF90195CCFCA009FF521 /* cap.png in Resources */,
 				0FA7FF8C195CBDA4009FF521 /* Default@2x.png in Resources */,
+				0FA7FFC9195DA38F009FF521 /* homescreen.png in Resources */,
 				0FA7FF87195B8893009FF521 /* Coke.png in Resources */,
 				0FA7FF5C195B7897009FF521 /* InfoPlist.strings in Resources */,
 				0FA7FF64195B7897009FF521 /* Images.xcassets in Resources */,
