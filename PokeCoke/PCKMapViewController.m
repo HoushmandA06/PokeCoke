@@ -28,8 +28,6 @@
     
 }
 
-
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -126,6 +124,8 @@
             [product saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 NSLog(@"%u",succeeded);
                 
+               
+                
                 // [self dismissViewControllerAnimated:NO completion:nil];
                 
             }];
@@ -141,6 +141,22 @@
     } else if ([actionSheet isEqual:alertViewTwo])
     {
         NSLog(@"alertviewtwo selected");
+        //// experimental code:
+        
+        [self dismissViewControllerAnimated:NO completion:^{
+            UIViewController * popTo = nil;
+            NSArray * viewControllers = [self.navigationController viewControllers];
+            if (viewControllers && [viewControllers count] > 1) {
+                popTo = [viewControllers objectAtIndex:1];
+            }
+            
+            if (popTo) {
+                [self.navigationController popToViewController:popTo animated:YES];
+            } else {
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            }
+            
+        }];
         
     }
     
@@ -169,6 +185,7 @@
         
         [product saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             NSLog(@"%u",succeeded);
+
             
             // [self dismissViewControllerAnimated:NO completion:nil];
             
@@ -177,6 +194,10 @@
     
         alertViewTwo = [[UIAlertView alloc] initWithTitle:@"Thanks for the info! Expect a reward email in your inbox!" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertViewTwo show];
+        
+
+        
+        
     
     }
 }
@@ -220,16 +241,16 @@
                 [annotation setSubtitle:cityState];
                 
                 self.addressField.text = numberStreet;
-
             }
             
-        }];
-      //  [mapView selectAnnotation:annotation animated:YES];  // makes annotation pop up auto
+     }];
+    //  [mapView selectAnnotation:annotation animated:YES];  // makes annotation pop up auto
     
     }
 // [lManager stopUpdatingLocation];
     
 }
+
 
 /*
 - (void)addPinToMap:(UIGestureRecognizer *)gestureRecognizer
