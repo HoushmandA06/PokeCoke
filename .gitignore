@@ -1,0 +1,11 @@
+*.class
+Glass/PokeCoke_GG/bin/AndroidManifest.xml
+Glass/PokeCoke_GG/bin/ProductLocator_GG.apk
+Glass/PokeCoke_GG/bin/PokeCoke_GG.apk
+Glass/PokeCoke_GG/bin/classes.dex
+Glass/PokeCoke_GG/bin/dexedLibs/Parse-1.4.0-04c8d044a996e3a0220d2a608827b59f.jar
+Glass/PokeCoke_GG/bin/res/crunch/drawable/card_backgd.png
+Glass/PokeCoke_GG/bin/res/crunch/drawable/pl_50.png
+Glass/PokeCoke_GG/bin/resources.ap_
+Glass/PokeCoke_GG/gen/com/cocacola/ccr/glass/demo/pokecoke/BuildConfig.java
+Glass/PokeCoke_GG/gen/com/cocacola/ccr/glass/demo/pokecoke/R.java
