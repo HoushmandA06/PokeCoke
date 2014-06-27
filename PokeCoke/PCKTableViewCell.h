@@ -8,22 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol PCKTableViewCellDelegate;
 
 @interface PCKTableViewCell : UITableViewCell
 
 @property (nonatomic) NSDictionary *productsInfo;
 
-@property (nonatomic,assign) id<PCKTableViewCellDelegate> delegate;
-
 
 @property (nonatomic) UILabel *productName;
-
-@end
-
-@protocol PCKTableViewCellDelegate <NSObject>
-
-@optional
 
 
 @end

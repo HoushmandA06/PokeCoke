@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "PCKViewController.h"
 
 
 @interface PCKMapViewController () <CLLocationManagerDelegate, MKMapViewDelegate, UITextFieldDelegate, UIAlertViewDelegate>
@@ -68,6 +69,7 @@
     email.placeholder = @"ENTER E-MAIL FOR REWARD";
     email.backgroundColor = HEADER_COLOR;
     email.keyboardType = UIKeyboardTypeEmailAddress;
+    email.autocorrectionType = UITextAutocorrectionTypeNo;
     email.leftView = [[UIView alloc] initWithFrame:CGRectMake(0,0,10,30)]; // puts the cursor a set amt right of the textfield
     email.leftViewMode = UITextFieldViewModeAlways;
     email.alpha = .80;
@@ -94,8 +96,6 @@
     self.addressField.font = [UIFont fontWithName:@"AppleSDGothicNeo-Medium" size:20];
     [self.view addSubview:self.addressField];
     
-    
-    
     UIView * footer = [[UIView alloc] initWithFrame:CGRectMake(0,SCREEN_HEIGHT-80,SCREEN_WIDTH,100)];
     footer.backgroundColor = HEADER_COLOR;
     footer.alpha = .40;
@@ -118,13 +118,10 @@
 
 - (void)alertView:(UIAlertView *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
     
-    if([actionSheet isEqual:alertViewOne])
+    if([actionSheet isEqual:alertViewOne] || [actionSheet isEqual:alertViewTwo])
     {
-        NSLog(@"alertviewone selected");
-       
         if (buttonIndex == 0)
         {
-            
             // PARSE SUBMISSION CODE HERE
             PFObject *product = [PFObject objectWithClassName:@"UserReport"];
             product[@"ProductName"]= self.productName.text;
@@ -136,37 +133,43 @@
             [product saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 NSLog(@"%u",succeeded);
                 
-                // [self dismissViewControllerAnimated:NO completion:nil];
-                
-            }];
+               }];
+            
+            NSInteger numberOfViewControllers = self.navigationController.viewControllers.count;
+            if (numberOfViewControllers>0) {
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            }else if(numberOfViewControllers == 0){
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+
         
         }
-        else
-        {
-            
-        }
+//        else
+//        {
+//            
+//        }
         
     
-    } else if ([actionSheet isEqual:alertViewTwo])
-    {
-        NSLog(@"alertviewtwo selected");
-        //// experimental code:
-        
-        [self dismissViewControllerAnimated:NO completion:^{
-            UIViewController * popTo = nil;
-            NSArray * viewControllers = [self.navigationController viewControllers];
-            if (viewControllers && [viewControllers count] > 1) {
-                popTo = [viewControllers objectAtIndex:1];
-            }
-            
-            if (popTo) {
-                [self.navigationController popToViewController:popTo animated:YES];
-            } else {
-                [self.navigationController popToRootViewControllerAnimated:YES];
-            }
-            
-        }];
-        
+//    } else if ([actionSheet isEqual:alertViewTwo])
+//    {
+//        NSLog(@"alertviewtwo selected");
+//        //// experimental code:
+//        
+//        [self dismissViewControllerAnimated:NO completion:^{
+//            UIViewController * popTo = nil;
+//            NSArray * viewControllers = [self.navigationController viewControllers];
+//            if (viewControllers && [viewControllers count] > 1) {
+//                popTo = [viewControllers objectAtIndex:1];
+//            }
+//            
+//            if (popTo) {
+//                [self.navigationController popToViewController:popTo animated:YES];
+//            } else {
+//                [self.navigationController popToRootViewControllerAnimated:YES];
+//            }
+//            
+//        }];
+//        
     }
     
 }
@@ -184,29 +187,10 @@
     } else
     
     {
-        // PARSE SUBMISSION CODE HERE
-        PFObject *product = [PFObject objectWithClassName:@"UserReport"];
-        product[@"ProductName"]= self.productName.text;
-        product[@"Email"]= email.text;
-        product[@"address"] = self.addressField.text;
-        // format CLLocation address to include city state (potentially)
-        // add a lat/long object key
-        
-        [product saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            NSLog(@"%u",succeeded);
-
-            
-            // [self dismissViewControllerAnimated:NO completion:nil];
-            
-        }];
-        
-    
+        // move alertViewTwo here
         alertViewTwo = [[UIAlertView alloc] initWithTitle:@"Thanks for the info! Expect a reward email in your inbox!" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertViewTwo show];
-        
 
-        
-        
     
     }
 }
@@ -214,22 +198,14 @@
 
 -(void)home
 {
+
+    NSInteger numberOfViewControllers = self.navigationController.viewControllers.count;
     
-    [self dismissViewControllerAnimated:NO completion:^{
-        UIViewController * popTo = nil;
-        NSArray * viewControllers = [self.navigationController viewControllers];
-        if (viewControllers && [viewControllers count] > 1) {
-            popTo = [viewControllers objectAtIndex:1];
-        }
-        
-        if (popTo) {
-            [self.navigationController popToViewController:popTo animated:YES];
-        } else {
+    if (numberOfViewControllers>0) {
             [self.navigationController popToRootViewControllerAnimated:YES];
-        }
-    }];
-    
-    
+    }else if(numberOfViewControllers == 0){
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 
@@ -393,7 +369,11 @@
 
 }
 
-
+-(void)viewDidAppear:(BOOL)animated
+{
+    self.navigationController.navigationBarHidden = YES;
+    self.navigationController.toolbarHidden = YES;
+}
 
 
 -(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view

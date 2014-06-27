@@ -8,9 +8,6 @@
 
 #import "PCKTableViewCell.h"
 
-
-
-
 @implementation PCKTableViewCell
 {
     UIImageView *image;
@@ -40,7 +37,6 @@
     
     image.image = productsInfo[@"image"];
     self.productName.text = productsInfo[@"name"];
-    
     
 }
 

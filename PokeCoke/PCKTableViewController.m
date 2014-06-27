@@ -51,19 +51,15 @@
 
 -(void)goStartScreen
 {
- 
-    NSLog(@"button selected");
-    
-    [self.navigationController dismissViewControllerAnimated:NO completion:nil];
-    
+
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 
 
 -(void)viewWillAppear:(BOOL)animated
 {
-   
-
     self.navigationController.navigationBarHidden = NO;
     self.navigationController.navigationBar.barTintColor = HEADER_COLOR;
     self.navigationController.toolbarHidden = YES;
@@ -81,9 +77,6 @@
 {
     [super viewDidLoad];
     NSString *letters= @"A B C D E F G H I J K L M N O P Q R S T U V W X Y Z";
-    
-    NSLog(@"the letters are %@",letters);
-    
     
     alphabets = [letters componentsSeparatedByString:@" "];
     cokeProducts = @{@"C" : @[@{@"image": [UIImage imageNamed:@"Coke"],@"name": @"Coca Cola"},
@@ -164,9 +157,11 @@
     products = [sectionProducts objectAtIndex:indexPath.row];
     
     PCKMapViewController *passValue = [[PCKMapViewController alloc] init];
-    [self presentViewController:passValue animated:NO completion:nil];
+    if (passValue.view) {
     passValue.productName.text = products[@"name"];
-    
+    }
+    [self.navigationController pushViewController:passValue animated:YES];
+
 }
 
 -(BOOL) prefersStatusBarHidden

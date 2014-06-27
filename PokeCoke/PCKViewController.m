@@ -98,33 +98,29 @@
 
 -(void)pushCokeProductList
 {
-    
     // PUSH TO SAVITHA'S FILE
     
     PCKTableViewController * TVC = [[PCKTableViewController alloc] initWithStyle:UITableViewStylePlain];
-    PCKNavVC * NVC = [[PCKNavVC alloc] initWithRootViewController:TVC];
-    [self presentViewController:NVC animated:NO completion:nil];
-
-    //    [self presentViewController:TVC animated:NO completion:nil];
     
+    [self.navigationController pushViewController:TVC animated:YES];
     
 }
 
 
 -(void)pushSubmitForm:(UIButton*)sender
 {
-    
-    
     PCKMapViewController * submitVC = [[PCKMapViewController alloc] initWithNibName:nil bundle:nil];
-    [self presentViewController:submitVC animated:NO completion:nil];
-    submitVC.productName.text = @"No Coca-Cola products at all!";
     
+    if (submitVC.view) {
+        submitVC.productName.text = @"No Coca-Cola products at all!";
+    }
+
+    [self.navigationController pushViewController:submitVC animated:YES];
 }
 
 
 -(void)phone
 {
-    
  
    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt://7706303262"]];
 
@@ -140,7 +136,7 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 
