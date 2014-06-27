@@ -95,20 +95,23 @@
     [self.view addSubview:self.addressField];
     
     
-    UIButton * submit = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-105, SCREEN_HEIGHT-105, 100, 100)];
-    [submit setImage:[UIImage imageNamed:@"Coke"] forState:UIControlStateNormal];
+    
+    UIView * footer = [[UIView alloc] initWithFrame:CGRectMake(0,SCREEN_HEIGHT-80,SCREEN_WIDTH,100)];
+    footer.backgroundColor = HEADER_COLOR;
+    footer.alpha = .40;
+    [self.view addSubview:footer];
+    
+    UIButton * submit = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-105, SCREEN_HEIGHT-90, 100, 100)];
+    [submit setImage:[UIImage imageNamed:@"plane"] forState:UIControlStateNormal];
     [submit addTarget:self action:@selector(submit) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:submit];
     
     
-    UIButton * home = [[UIButton alloc] initWithFrame:CGRectMake(105, SCREEN_HEIGHT-105, 100, 100)];
-    [home setImage:[UIImage imageNamed:@"homescreen"] forState:UIControlStateNormal];
+    UIButton * home = [[UIButton alloc] initWithFrame:CGRectMake(5, SCREEN_HEIGHT-90, 100, 100)];
+    [home setImage:[UIImage imageNamed:@"backHome"] forState:UIControlStateNormal];
     [home addTarget:self action:@selector(home) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:home];
-    
-    
-    
-    
+
 }
 
 

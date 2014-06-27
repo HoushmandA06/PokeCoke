@@ -41,6 +41,9 @@
 		0FA7FFC4195CD888009FF521 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA7FFC3195CD888009FF521 /* SystemConfiguration.framework */; };
 		0FA7FFC7195CE823009FF521 /* PCKNavVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA7FFC6195CE823009FF521 /* PCKNavVC.m */; };
 		0FA7FFC9195DA38F009FF521 /* homescreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA7FFC8195DA38F009FF521 /* homescreen.png */; };
+		0FA7FFCD195DA731009FF521 /* backHome.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA7FFCC195DA731009FF521 /* backHome.png */; };
+		0FA7FFCF195DA87B009FF521 /* sendmail.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA7FFCE195DA87B009FF521 /* sendmail.png */; };
+		0FA7FFD1195DA912009FF521 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA7FFD0195DA912009FF521 /* plane.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +101,9 @@
 		0FA7FFC5195CE823009FF521 /* PCKNavVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKNavVC.h; sourceTree = "<group>"; };
 		0FA7FFC6195CE823009FF521 /* PCKNavVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKNavVC.m; sourceTree = "<group>"; };
 		0FA7FFC8195DA38F009FF521 /* homescreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homescreen.png; sourceTree = "<group>"; };
+		0FA7FFCC195DA731009FF521 /* backHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backHome.png; sourceTree = "<group>"; };
+		0FA7FFCE195DA87B009FF521 /* sendmail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sendmail.png; sourceTree = "<group>"; };
+		0FA7FFD0195DA912009FF521 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,7 +206,10 @@
 		0FA7FF58195B7897009FF521 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0FA7FFD0195DA912009FF521 /* plane.png */,
 				0FA7FF86195B8893009FF521 /* Coke.png */,
+				0FA7FFCE195DA87B009FF521 /* sendmail.png */,
+				0FA7FFCC195DA731009FF521 /* backHome.png */,
 				0FA7FF59195B7897009FF521 /* PokeCoke-Info.plist */,
 				0FA7FF5A195B7897009FF521 /* InfoPlist.strings */,
 				0FA7FF5D195B7897009FF521 /* main.m */,
@@ -310,10 +319,13 @@
 			files = (
 				0FA7FF90195CCFCA009FF521 /* cap.png in Resources */,
 				0FA7FF8C195CBDA4009FF521 /* Default@2x.png in Resources */,
+				0FA7FFCF195DA87B009FF521 /* sendmail.png in Resources */,
 				0FA7FFC9195DA38F009FF521 /* homescreen.png in Resources */,
+				0FA7FFCD195DA731009FF521 /* backHome.png in Resources */,
 				0FA7FF87195B8893009FF521 /* Coke.png in Resources */,
 				0FA7FF5C195B7897009FF521 /* InfoPlist.strings in Resources */,
 				0FA7FF64195B7897009FF521 /* Images.xcassets in Resources */,
+				0FA7FFD1195DA912009FF521 /* plane.png in Resources */,
 				0FA7FF8E195CBDAF009FF521 /* Default.png in Resources */,
 				0FA7FF92195CD124009FF521 /* LOKICOLA.TTF in Resources */,
 			);
@@ -548,6 +560,7 @@
 				0FA7FF7C195B7897009FF521 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0FA7FF7D195B7897009FF521 /* Build configuration list for PBXNativeTarget "PokeCokeTests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +569,7 @@
 				0FA7FF7F195B7897009FF521 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
