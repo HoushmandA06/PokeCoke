@@ -22,6 +22,10 @@
     CLLocationManager * lManager; // has an array of locations
     MKMapView * myMapView;
     UITextField * email;
+    
+    UIAlertView *alertViewOne;
+    UIAlertView *alertViewTwo;
+    
 }
 
 
@@ -104,9 +108,57 @@
 
 - (void)alertView:(UIAlertView *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
     
-    if (buttonIndex == 0)
+    if([actionSheet isEqual:alertViewOne])
     {
+        NSLog(@"alertviewone selected");
+       
+        if (buttonIndex == 0)
+        {
+            
+            // PARSE SUBMISSION CODE HERE
+            PFObject *product = [PFObject objectWithClassName:@"UserReport"];
+            product[@"ProductName"]= self.productName.text;
+            product[@"Email"]= email.text;
+            product[@"address"] = self.addressField.text;
+            // format CLLocation address to include city state (potentially)
+            // add a lat/long object key
+            
+            [product saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                NSLog(@"%u",succeeded);
+                
+                // [self dismissViewControllerAnimated:NO completion:nil];
+                
+            }];
+            
+            
+        }
+        else
+        {
+            
+        }
         
+    
+    } else if ([actionSheet isEqual:alertViewTwo])
+    {
+        NSLog(@"alertviewtwo selected");
+        
+    }
+    
+}
+
+
+-(void)submit
+{
+    
+    if([email.text length] == 0)
+        
+    {
+        alertViewOne = [[UIAlertView alloc] initWithTitle:@"Email is optional, but we can't send you a reward without it. Are you sure you want to submit?"  message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
+        [alertViewOne show];
+        
+    } else
+    
+    {
         // PARSE SUBMISSION CODE HERE
         PFObject *product = [PFObject objectWithClassName:@"UserReport"];
         product[@"ProductName"]= self.productName.text;
@@ -117,44 +169,17 @@
         
         [product saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             NSLog(@"%u",succeeded);
-
-        [self dismissViewControllerAnimated:NO completion:nil];
             
-
+            // [self dismissViewControllerAnimated:NO completion:nil];
+            
         }];
         
-        
-        
-
-    }
-    else
-    {
-        
+    
+        alertViewTwo = [[UIAlertView alloc] initWithTitle:@"Thanks for the info! Expect a reward email in your inbox!" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertViewTwo show];
+    
     }
 }
-
-
--(void)submit
-{
-    
-    if([email.text length] == 0)
-        
-    {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Email is optional, but we can't send you a reward without it. Are you sure you want to submit?"  message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
-        [alertView show];
-        
-    } else
-    
-    {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Thanks for the info!  Expect a reward email in your inbox!" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
-    
-    [alertView show];
-    }
-    
-}
-
-
-
 
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
